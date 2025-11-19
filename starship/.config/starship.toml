@@ -2,14 +2,14 @@
 
 
 palette = "grey"
-format = """$username$hostname$directory$fill[$package$cmd_duration$git_branch](grey)$time$line_break$character"""
+format = """$username$hostname$directory$fill[$package$cmd_duration$git_branch$git_status](grey)$time$line_break$character"""
 
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[>](bold red)"
 
 [directory]
-read_only = " !"
+read_only = " !ro"
 
 [fill]
 symbol = '─'

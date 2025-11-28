@@ -17,7 +17,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Aliases 
-alias ls="ls --color"
+alias ls="eza -l"
 alias c="clear"
 
 # Zsh plugins

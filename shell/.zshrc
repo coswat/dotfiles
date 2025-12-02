@@ -20,6 +20,9 @@ bindkey '^n' history-search-forward
 alias ls="eza -l"
 alias c="clear"
 
+# Paths 
+export PATH="$HOME/.cargo/bin:$PATH" 
+
 # Zsh plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

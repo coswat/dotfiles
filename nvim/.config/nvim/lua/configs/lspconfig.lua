@@ -12,6 +12,7 @@ M.on_attach = function(_, bufnr)
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
 
   map("n", "K", vim.lsp.buf.hover, opts "LSP hover")
+  map("n", "E", vim.diagnostic.open_float, opts "Open Diagnostic")
   map("n", "<C-k>", vim.lsp.buf.signature_help, opts "LSP signature help")
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))

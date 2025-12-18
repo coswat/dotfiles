@@ -65,6 +65,9 @@ M.defaults = function()
 
   local rust_lsp_settings = {
     ["rust-analyzer"] = {
+      inlayHints = {
+        chainingHints = { enable = true },
+      },
       cargo = {
         features = "all",
       },

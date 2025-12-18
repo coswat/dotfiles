@@ -16,10 +16,14 @@ M.base46 = {
 }
 
 M.nvdash = { load_on_startup = false }
+
 M.ui = {
   cmp = {
     style = "catppuccin_colored",
     icons_left = true,
+  },
+  statusline = {
+    theme = "vscode",
   },
 }
 

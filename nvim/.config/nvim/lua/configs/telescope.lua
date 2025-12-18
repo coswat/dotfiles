@@ -21,5 +21,5 @@ return {
 
   extensions_list = { "themes", "terms" },
 
-  require("telescope")
+  require "telescope",
 }

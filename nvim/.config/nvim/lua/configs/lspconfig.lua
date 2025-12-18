@@ -17,6 +17,11 @@ M.on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts "List workspace folders")
   map("n", "<leader>a", vim.lsp.buf.code_action, opts "LSP code actions")
+  
+  map("n", "<leader>i", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, opts "LSP Toggle inlay hints")
+  
   map("n", "<leader>r", require "nvchad.lsp.renamer", opts "NvRenamer")
 end
 

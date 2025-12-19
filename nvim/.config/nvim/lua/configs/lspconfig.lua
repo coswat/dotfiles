@@ -23,6 +23,14 @@ M.on_attach = function(_, bufnr)
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, opts "LSP Toggle inlay hints")
 
+  map("n", "]e", function()
+    vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR }
+  end, opts "Goto next diagnostic error")
+
+  map("n", "[e", function()
+    vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR }
+  end, opts "Goto previous diagnostic error")
+
   map("n", "<leader>r", require "nvchad.lsp.renamer", opts "NvRenamer")
 end
 

@@ -24,7 +24,15 @@ M.ui = {
   },
   statusline = {
     theme = "vscode",
+    order = {
+      "mode",
+      "file",
+      "%=",
+      "lsp",
+      "cwd",
+    },
   },
+  tabufline = { enabled = false },
 }
 
 return M

@@ -28,6 +28,8 @@ M.ui = {
       "mode",
       "file",
       "%=",
+      "lsp_msg",
+      "%=",
       "diagnostics",
       "lsp",
       "cwd",

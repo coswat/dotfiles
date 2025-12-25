@@ -19,6 +19,7 @@ bindkey '^n' history-search-forward
 # Aliases 
 alias ls="eza -l"
 alias c="clear"
+alias bat="bat --theme 'Catppuccin Mocha'"
 
 # Paths 
 export PATH="$HOME/.cargo/bin:$PATH" 

@@ -35,7 +35,14 @@ M.ui = {
       "cwd",
     },
   },
-  tabufline = { enabled = false },
+  tabufline = {
+    enabled = false,
+    --  order = {
+    --  "treeOffset",
+    --  "buffers",
+    -- "tabs",
+    -- },
+  },
 }
 
 return M

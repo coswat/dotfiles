@@ -21,15 +21,14 @@ require("lazy").setup({
     "Nvchad/Nvchad",
     lazy = false,
     branch = "v2.5",
-    import = "chad_plugins",
+    import = "plugins",
   },
-  { import = "plugins" },
+--  { import = "plugins" },
 }, lazy_config)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
-dofile(vim.g.base46_cache .. "syntax")
 
 require "options"
 require "autocmds"

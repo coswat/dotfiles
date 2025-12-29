@@ -25,3 +25,19 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+
+-- highlight yanked text
+autocmd("TextYankPost", {
+  pattern = "*",
+  command = "silent! lua vim.highlight.on_yank({ timeout = 100 })",
+})
+
+-- jump to last edit position on opening file
+autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function(ev)
+    if vim.fn.line "'\"" > 1 and vim.fn.line "'\"" <= vim.fn.line "$" then
+      vim.cmd 'exe "normal! g\'\\""'
+    end
+  end,
+})

@@ -18,17 +18,21 @@ local lazy_config = require "configs.lazy"
 -- load plugins
 require("lazy").setup({
   {
-    "Nvchad/Nvchad",
+    "Nvchad/ui",
     lazy = false,
-    branch = "v2.5",
+    branch = "v3.0",
     import = "plugins",
+    config = function()
+      require "nvchad"
+    end,
   },
---  { import = "plugins" },
-}, lazy_config)
+}, 
+lazy_config)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
+dofile(vim.g.base46_cache .. "devicons")
 
 require "options"
 require "autocmds"

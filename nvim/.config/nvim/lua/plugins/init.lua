@@ -8,30 +8,12 @@ return {
     end,
   },
 
-  {
-    "nvchad/ui",
-    lazy = false,
-    config = function()
-      require "nvchad"
-    end,
-  },
-
   { "nvzone/volt" },
 
   {
     "nvim-tree/nvim-web-devicons",
     opts = function()
-      dofile(vim.g.base46_cache .. "devicons")
       return { override = require "nvchad.icons.devicons" }
-    end,
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    cmd = "Telescope",
-    opts = function()
-      return require "configs.telescope"
     end,
   },
 
@@ -85,5 +67,13 @@ return {
     "folke/twilight.nvim",
     opts = {},
     cmd = "Twilight",
+  },
+
+  {
+    "ibhagwan/fzf-lua",
+    cmd = "FzfLua",
+    opts = function()
+      return require "configs.fzf"
+    end,
   },
 }

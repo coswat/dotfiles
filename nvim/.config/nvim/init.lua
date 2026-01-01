@@ -26,8 +26,7 @@ require("lazy").setup({
       require "nvchad"
     end,
   },
-}, 
-lazy_config)
+}, lazy_config)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")

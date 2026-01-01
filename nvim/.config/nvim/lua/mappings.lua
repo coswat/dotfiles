@@ -1,40 +1,50 @@
 local map = vim.keymap.set
-
+local opts = { noremap = true, silent = true }
 -- general
 map("n", "<Space>", "<Nop>", { silent = true })
-map("n", "9", "$", { noremap = true, silent = true })
+-- 9 as $ , go to end of the line
+map("n", "9", "$", opts)
+-- clear search highlights
 map({ "n", "v" }, "<C-h>", "<cmd>nohlsearch<cr>")
-map({ "n", "i", "v" }, "<F1>", "<ESC>")
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
-map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
+-- using f1 as esc button
+map({ "n", "i", "v" }, "<F1>", "<Esc>")
+-- clear highlights
+map("n", "<Esc>", "<cmd>noh<CR>")
+-- copy/yoink the whole file
+map("n", "<C-c>", "<cmd>%y+<CR>")
 
 -- disabled arrow key movements for avoiding bad habbit
-local opts = { noremap = true, silent = true }
-
-map({ "n", "i", "v" }, "<Up>", "<Nop>", opts)
-map({ "n", "i", "v" }, "<Down>", "<Nop>", opts)
-map({ "n", "i", "v" }, "<Left>", "<Nop>", opts)
-map({ "n", "i", "v" }, "<Right>", "<Nop>", opts)
+map({ "n", "i", "v" }, "<up>", "<nop>", opts)
+map({ "n", "i", "v" }, "<down>", "<nop>", opts)
+map({ "n", "i", "v" }, "<left>", "<nop>", opts)
+map({ "n", "i", "v" }, "<right>", "<nop>", opts)
 
 -- twilight
-map("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })
+map("n", "<leader>tw", "<cmd>Twilight<CR>")
 
 -- fzf lua
-map("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "fzf.lua find files" })
-map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { desc = "fzf.lua find buffers" })
-map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "fzf.lua find oldfiles" })
-map("n", "<leader>fx", "<cmd>FzfLua zoxide<CR>", { desc = "fzf.lua recent zoxide paths" })
+-- fine all files inside of our current dir
+map("n", "<leader>ff", "<cmd>FzfLua files<cr>")
+-- find all buffers
+map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>")
+-- find old files
+map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>")
+-- find recent zoxide cd'ed paths
+map("n", "<leader>fx", "<cmd>FzfLua zoxide<CR>")
 
 -- nvchad themes
+-- listing theme
 map("n", "<leader>th", function()
   require("nvchad.themes").open()
-end, { desc = "telescope nvchad themes" })
+end)
 
 -- terminals
+-- open a vertical terminal which is toggleable
 map({ "n", "t" }, "<leader>v", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
-end, { desc = "terminal toggleable vertical term" })
+end)
 
+-- open a horizontal terminal which is toggleable
 map({ "n", "t" }, "<leader>h", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
-end, { desc = "terminal toggleable horizontal term" })
+end)

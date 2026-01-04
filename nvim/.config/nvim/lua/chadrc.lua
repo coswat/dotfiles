@@ -9,9 +9,11 @@ M.base46 = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
+  integrations = { "semantic_tokens" },
 }
 
 M.nvdash = { load_on_startup = false }
+M.lsp = { signature = false }
 
 M.ui = {
   cmp = {

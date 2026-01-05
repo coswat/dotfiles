@@ -10,6 +10,7 @@ M.base46 = {
     ["@comment"] = { italic = true },
   },
   integrations = { "semantic_tokens" },
+  excluded = { "whichkey", "telescope", "tbline", "nvimtree", "nvcheatsheet", "mason", "git" },
 }
 
 M.nvdash = { load_on_startup = false }

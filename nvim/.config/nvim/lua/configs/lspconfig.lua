@@ -55,15 +55,15 @@ M.capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 M.defaults = function()
   dofile(vim.g.base46_cache .. "lsp")
-   dofile(vim.g.base46_cache .. "semantic_tokens")
-  --require("nvchad.lsp").diagnostic_config()
+  dofile(vim.g.base46_cache .. "semantic_tokens")
+  require("nvchad.lsp").diagnostic_config()
   local x = vim.diagnostic.severity
   vim.diagnostic.config {
     virtual_text = { prefix = "|" },
     signs = {
       text = { [x.ERROR] = "●", [x.WARN] = "●", [x.INFO] = "●", [x.HINT] = "●" },
     },
-    underline = false,
+    underline = true,
     float = { border = "single" },
   }
 
@@ -78,6 +78,9 @@ M.defaults = function()
       inlayHints = {
         chainingHints = { enable = true },
       },
+      -- semanticHighlighting = {
+      --   punctuation = { enable = true },
+      -- },
       imports = {
         group = { enable = false },
       },

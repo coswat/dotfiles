@@ -12,6 +12,8 @@ map({ "n", "i", "v" }, "<F1>", "<Esc>")
 map("n", "<Esc>", "<cmd>noh<CR>")
 -- copy/yoink the whole file
 map("n", "<C-c>", "<cmd>%y+<CR>")
+-- execute selected lua lines 
+map("v", "<leader>x", ":lua<CR>")
 
 -- disabled arrow key movements for avoiding bad habbit
 map({ "n", "i", "v" }, "<up>", "<nop>", opts)

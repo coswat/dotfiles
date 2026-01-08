@@ -60,6 +60,7 @@ M.defaults = function()
   -- require("nvchad.lsp").diagnostic_config()
 
   local x = vim.diagnostic.severity
+
   vim.diagnostic.config {
     virtual_text = { prefix = "|" },
     signs = {

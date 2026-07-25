@@ -55,7 +55,7 @@ M.capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 M.defaults = function()
   dofile(vim.g.base46_cache .. "lsp")
-  dofile(vim.g.base46_cache .. "semantic_tokens")
+  dofile(vim.g.base46_cache .. "sem")
 
   -- require("nvchad.lsp").diagnostic_config()
 

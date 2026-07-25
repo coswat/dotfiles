@@ -9,7 +9,8 @@ M.base46 = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
-  integrations = { "semantic_tokens" },
+
+  integrations = { "sem" },
   integrations_dir = "integrations",
 
   excluded = { "whichkey", "telescope", "tbline", "nvimtree", "nvcheatsheet", "mason", "git" },

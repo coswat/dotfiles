@@ -26,6 +26,7 @@ M.ui = {
   },
   statusline = {
     theme = "vscode",
+    -- separator_style = "round",
     order = {
       "mode",
       "file",

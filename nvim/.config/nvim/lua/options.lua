@@ -24,7 +24,7 @@ o.smartcase = true
 o.mouse = ""
 
 o.number = true
-o.numberwidth = 2
+o.numberwidth = 1
 o.ruler = false
 
 -- disable nvim intro

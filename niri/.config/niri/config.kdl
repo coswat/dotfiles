@@ -1,3 +1,18 @@
+blur {
+    passes 3
+    offset 7.5 
+}
+
+gestures {
+    hot-corners { 
+      off
+    }
+}
+
+cursor {
+    hide-after-inactive-ms 5000
+}
+
 input {
     keyboard {
         xkb {}
@@ -34,13 +49,12 @@ layout {
         proportion 0.5
     }
     focus-ring {
-        off
-        width 3
+        width 2.5
         active-color "#786f80"
         inactive-color "#505050"
     }
     shadow {
-        //  on
+        // on
         // draw-behind-window true
         softness 30
         // Spread expands the shadow.
@@ -64,7 +78,7 @@ layout {
     }
 }
 
-spawn-at-startup "swaybg" "-i" "wall.jpg"
+spawn-at-startup "swaybg" "-i" "wall2.jpg"
 
 hotkey-overlay {
     skip-at-startup
@@ -94,14 +108,14 @@ block-out-from "screen-capture"
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 17
     clip-to-geometry true
-    opacity 0.9
+    opacity 0.81
     background-effect {
       xray true
       blur true
-      noise 0.09
-      saturation 1
+      noise 0.06
+      saturation 1.1
 
     }
 }

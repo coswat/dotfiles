@@ -10,6 +10,7 @@ gestures {
 }
 
 cursor {
+    xcursor-theme "Bibata-Modern-Ice"
     hide-after-inactive-ms 5000
 }
 
@@ -79,6 +80,7 @@ layout {
 }
 
 spawn-at-startup "swaybg" "-i" "wall2.jpg"
+spawn-at-startup "hyprlock"
 
 hotkey-overlay {
     skip-at-startup
@@ -120,6 +122,12 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="zen$"
+    opacity 0.87
+    draw-border-with-background false
+}
+
 binds {
     Mod+Shift+Slash {
         show-hotkey-overlay
@@ -131,8 +139,8 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" {
         spawn "fuzzel"
     }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" {
-        spawn "swaylock"
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" {
+        spawn "hyprlock"
     }
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

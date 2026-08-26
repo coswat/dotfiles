@@ -126,6 +126,7 @@ window-rule {
     match app-id="zen$"
     opacity 0.87
     draw-border-with-background false
+    open-maximized true
 }
 
 binds {

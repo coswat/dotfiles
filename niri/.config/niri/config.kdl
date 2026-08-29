@@ -92,11 +92,15 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {}
 
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id="firefox$" title="^Picture-in-Picture$"
+    match app-id="zen$" title="^Picture-in-Picture$"
     open-floating true
+    open-focused false
+    default-floating-position x=16 y=48 relative-to="bottom-right"
+
+    max-width 500
+    max-height 300
+    
+    baba-is-float true
 }
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
@@ -119,6 +123,9 @@ window-rule {
       noise 0.06
       saturation 1.1
 
+    }   
+    popups {
+        opacity 0.99
     }
 }
 

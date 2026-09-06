@@ -116,6 +116,7 @@ block-out-from "screen-capture"
 window-rule {
     geometry-corner-radius 17
     clip-to-geometry true
+    draw-border-with-background false
     opacity 0.81
     background-effect {
       xray true

@@ -34,7 +34,6 @@ output "eDP-1" {
     scale 1.25
     transform "normal"
     position x=1280 y=0
-    variable-refresh-rate on-demand=true
 }
 
 layout {
@@ -137,7 +136,6 @@ window-rule {
 window-rule {
     match app-id="zen$"
     opacity 0.87
-    draw-border-with-background false
     open-maximized true
 }
 

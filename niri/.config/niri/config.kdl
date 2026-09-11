@@ -1,6 +1,6 @@
 blur {
     passes 3
-    offset 7.5 
+    offset 9 
 }
 
 gestures {

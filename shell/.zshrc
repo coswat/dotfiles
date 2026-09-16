@@ -39,6 +39,7 @@ bindkey '^r' sk-history-widget
 alias ls="eza -l"
 alias c="clear"
 alias bat="bat --theme 'Catppuccin Mocha'"
+alias nano="nvim"
 
 # Paths
 export PATH="$HOME/.cargo/bin:$PATH"

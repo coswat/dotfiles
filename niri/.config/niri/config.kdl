@@ -36,49 +36,10 @@ output "eDP-1" {
     position x=1280 y=0
 }
 
-layout {
-    gaps 10
-    background-color "222021"
-    center-focused-column "never"
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
-    default-column-width {
-        proportion 0.5
-    }
-    focus-ring {
-        width 2.5
-        active-color "#786f80"
-        inactive-color "#505050"
-    }
-    shadow {
-        // on
-        // draw-behind-window true
-        softness 30
-        // Spread expands the shadow.
-        spread 5
-        // Offset moves the shadow relative to the window.
-        offset x=0 y=5
-        // You can also change the shadow color and opacity.
-        color "#0007"
-    }
-    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
-    // You can think of them as a kind of outer gaps. They are set in logical pixels.
-    // Left and right struts will cause the next window to the side to always be visible.
-    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
-    // layer-shell panels and regular gaps.
-    struts {
- // left 64
-        // right 64
-        // top 64
-        // bottom 64
+include "./layout.kdl"
 
-    }
-}
-
-spawn-at-startup "swaybg" "-i" "wall2.jpg"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "waybar"
 spawn-at-startup "hyprlock"
 
 hotkey-overlay {
@@ -129,6 +90,24 @@ window-rule {
     open-maximized true
 }
 
+
+layer-rule {
+    match namespace="waybar"
+    background-effect {
+        xray false
+        blur true
+    }
+}
+
+layer-rule {
+    match namespace="launcher"
+    geometry-corner-radius 19
+    background-effect {
+        xray false
+        blur true
+    }
+}
+
 binds {
     Mod+Shift+Slash {
         show-hotkey-overlay
@@ -138,7 +117,10 @@ binds {
         spawn "alacritty"
     }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" {
-        spawn "fuzzel"
+        spawn "fuzzel" "-b" "21212199" "-r" "19" "--selection-radius" "8" "-s" "e5c890ff"
+    }
+    Mod+S {
+      spawn "killall" "-SIGUSR1" "waybar"
     }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" {
         spawn "hyprlock"
@@ -209,9 +191,9 @@ binds {
     Mod+Right {
         focus-column-right
     }
-    Mod+H {
-        focus-column-left
-    }
+    // Mod+H {
+    //     focus-column-left
+    // }
     Mod+B {
         focus-column-left
     }
@@ -596,9 +578,6 @@ binds {
     }
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E {
-        quit
-    }
-    Ctrl+Alt+Delete {
         quit
     }
     // Powers off the monitors. To turn them back on, do any input like

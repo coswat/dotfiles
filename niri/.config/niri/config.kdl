@@ -100,6 +100,15 @@ layer-rule {
 }
 
 layer-rule {
+    match namespace="notifications"
+    geometry-corner-radius 10
+    background-effect {
+        xray false
+        blur true
+    }
+}
+
+layer-rule {
     match namespace="launcher"
     geometry-corner-radius 19
     background-effect {
@@ -117,7 +126,7 @@ binds {
         spawn "alacritty"
     }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" {
-        spawn "fuzzel" "-b" "21212199" "-r" "19" "--selection-radius" "8" "-s" "e5c890ff"
+        spawn "fuzzel"
     }
     Mod+S {
       spawn "killall" "-SIGUSR1" "waybar"

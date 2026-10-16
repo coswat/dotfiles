@@ -1,6 +1,21 @@
 [config]
 version_check = false
+caching = true
+source_color_index = 0
+
+[config.wallpaper]
+set = true 
+command = "awww img -t center {{ image }}"
 
 [templates.niri]
 input_path = "~/.config/matugen/templates/layout.kdl"
 output_path = "~/.config/niri/layout.kdl"
+
+[templates.dunst]
+input_path = "~/.config/matugen/templates/dunstrc"
+output_path = "~/.config/dunst/dunstrc"
+post_hook = "dunstctl reload"
+
+[templates.fuzzel]
+input_path = "~/.config/matugen/templates/fuzzel.ini"
+output_path = "~/.config/fuzzel/fuzzel.ini"

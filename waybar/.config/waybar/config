@@ -1,9 +1,9 @@
 
 {
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 4, // Waybar height (to be removed for auto height)
+    "height": 5, // Waybar height (to be removed for auto height)
     "modules-left": ["mpris"],
-    "modules-center": [],
+    "modules-center": [], //["niri/workspaces"],
     "modules-right": ["pulseaudio", "network", "backlight","cpu","memory","battery", "clock"],
     "idle_inhibitor": {
         "format": "{icon}",
@@ -64,20 +64,20 @@
         "format-muted": "{format_source}",
         "format-source": "{volume}%  ",
         "format-source-muted": "",
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol"
     },
 
      "mpris": {
 	      "format": " {player_icon} {title} - {artist}",
-	      "format-paused": " {status_icon} <i>{title} - {artist}</i>",
+	      "format-paused": " {status_icon} {title} - {artist}",
         "ellipsis": " ...",
         "max-length": 40,
 	      "player-icons": {
-		    "default": "⏸",
+		    "default": "⏸ ",
 		  //  "mpv": "🎵"
 	   },
 	    "status-icons": {
-		  "paused": "▶"
+		      "paused": "▶ "
 	    }
 	// "ignored-players": ["firefox"]
      }

@@ -41,7 +41,7 @@ include "./layout.kdl"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "hyprlock"
-spawn-at-startup "power-tweaks" "1"
+spawn-at-startup "power-tweaks" "2"
 
 hotkey-overlay {
     skip-at-startup

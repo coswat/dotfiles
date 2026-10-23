@@ -1,0 +1,5 @@
+[Unit]
+Description=Wallpaper changer with matugen integration
+
+[Service]
+ExecStart=/usr/local/bin/wallpaper

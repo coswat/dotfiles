@@ -1,0 +1,6 @@
+#!/bin/bash
+
+WALLD="$HOME/Pictures/Wallpapers"
+WALL=$(fd --max-depth 1 --type f . "$WALLD" | shuf -n 1)
+
+matugen image "$WALL"

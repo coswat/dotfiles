@@ -1,0 +1,20 @@
+#!/bin/bash
+
+[[ $# -eq 0 ]] && exit 1
+
+asusctl profile set Performance
+power-tweaks 0
+
+notify-send "GamePerf" "Game Performance Activated"
+
+restore() {
+  asusctl profile set Balanced
+  power-tweaks 2
+  notify-send "GamePerf" "Game Performance Disabled"
+}
+
+trap restore EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+"$@"

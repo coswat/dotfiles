@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+
+## A SIMPLE SCRIPT TO CHANGE NVIDIA GPU CLOCKS ACCORDING
+## TO DIFFERENT SITUATIONS 
+
+
+set_clocks() {
+  sudo nvidia-smi -lmc 5500,6500
+  sudo nvidia-smi -lgc 820,2100
+  notify-send "Power Tweaks" "Added custom GPU clock values"
+}
+
+remove_clocks() {
+  sudo nvidia-smi -rgc
+  sudo nvidia-smi -rmc
+  notify-send "Power Tweaks" "Removed custom set GPU clocks"
+}
+
+# 0 and 1 calls are coming from udev -> systemd, while power change happens
+# 0 in udev means its not on AC and 1 means its AC
+# 2 is coming from niri's startup or after a game exit
+
+case "$1" in
+    0)
+        remove_clocks
+        ;;
+    1)
+        if pgrep -x "wineserver|umu.exe|gameperf" >/dev/null; then 
+          # Do not set clocks when games are running
+          exit 0
+        fi
+
+        set_clocks
+        ;;
+    2)
+        if [[ $(cat /sys/class/power_supply/ACAD/online) -eq 1 ]]; then
+          set_clocks
+        fi
+        ;;
+    *)
+        echo "Usage: $0 {0|1|2}"
+        exit 1
+        ;;
+esac

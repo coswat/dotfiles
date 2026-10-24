@@ -1,0 +1,10 @@
+[Unit]
+Description=Custom power rules when AC/BAT
+After=graphical-session.target
+StartLimitIntervalSec=2
+StartLimitBurst=1
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 1
+ExecStart=/usr/local/bin/power-tweaks %I

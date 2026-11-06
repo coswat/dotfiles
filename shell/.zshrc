@@ -39,7 +39,7 @@ bindkey '^r' sk-history-widget
 alias ls="eza -l"
 alias c="clear"
 alias cx="clear -x"
-alias bat="bat --theme 'Catppuccin Mocha'"
+alias bat="bat --theme 'Catppuccin Mocha' -pp"
 alias nano="nvim"
 
 # Paths

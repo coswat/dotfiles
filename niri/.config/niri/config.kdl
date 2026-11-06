@@ -31,6 +31,7 @@ input {
 
 output "eDP-1" {
     mode "1920x1080@144.003"
+    variable-refresh-rate on-demand=true
     scale 1.25
     transform "normal"
     position x=1280 y=0
@@ -51,6 +52,12 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {}
+
+// Variable refersh rate for proton games from steam
+window-rule {
+    match app-id="^steam_app_[0-9]+$"
+    variable-refresh-rate true
+}
 
 window-rule {
     match app-id="zen$" title="^Picture-in-Picture$"
@@ -97,7 +104,6 @@ window-rule {
     opacity 0.87
     open-maximized true
 }
-
 
 layer-rule {
     match namespace="waybar"
